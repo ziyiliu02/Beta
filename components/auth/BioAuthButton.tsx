@@ -20,13 +20,6 @@ const BioAuthButton = () => {
                 </View>
             </TouchableOpacity>
         </View>
-
-        <Text style={styles.loginWrapper}>
-          Already have an account?
-          <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={{ marginTop: -2}}> 
-            <Text style={styles.loginTxt}>Login</Text>
-          </TouchableOpacity>
-        </Text>
     </View>
   )
 }
@@ -58,15 +51,4 @@ const styles = StyleSheet.create({
         color: 'white',
         paddingTop: 2
     },
-    loginWrapper: {
-        color: Colors.primaryColorBlack,
-        textAlign: 'center',
-        alignItems: 'center',
-        marginTop: 15
-    }, 
-    loginTxt: {
-        color: Colors.primaryColorBlack,
-        fontWeight: '800',
-        marginLeft: 5
-    }
 })

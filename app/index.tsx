@@ -29,7 +29,7 @@ const Page = () => {
         </TouchableOpacity>
         <Text style={styles.loginWrapper}>
           Already have an account?
-          <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={{ marginTop: -2}}> 
+          <TouchableOpacity onPress={() => router.push("/auth/login")} style={{ marginTop: -2}}> 
             <Text style={styles.loginTxt}>Login</Text>
           </TouchableOpacity>
         </Text>

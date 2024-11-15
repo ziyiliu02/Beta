@@ -26,13 +26,23 @@ const register = () => {
     }}/>
     <View style={[styles.container, { paddingTop: headerHeight }]}>
       <Text style={styles.headingTxt}>Join the fun! 🙂</Text>
+
       <RegisterationForm/>
+
       <View style={styles.separatorContainer}>
         <View style={styles.separatorLine}/>
         <Text style={styles.separatorTxt}>Or join with</Text>
         <View style={styles.separatorLine}/>
       </View>
+
       <BioAuthButton/>
+
+      <Text style={styles.loginTextWrapper}>
+        Already have an account?
+        <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={{ marginTop: -2}}> 
+          <Text style={styles.loginText}>Login</Text>
+        </TouchableOpacity>
+      </Text>
     </View>
     </>
   )
@@ -57,7 +67,7 @@ const styles = StyleSheet.create({
   separatorContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 20,
+    marginBottom: 15,
     paddingHorizontal: 10
   },
   separatorLine: {
@@ -69,5 +79,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     color: Colors.primaryColorBlack,
     fontSize: 14
+  },
+  loginTextWrapper: {
+    color: Colors.primaryColorBlack,
+    textAlign: 'center',
+    alignItems: 'center',
+    marginTop: 15
+  }, 
+  loginText: {
+    color: Colors.primaryColorBlack,
+    fontWeight: '800',
+    marginLeft: 5
   }
 });

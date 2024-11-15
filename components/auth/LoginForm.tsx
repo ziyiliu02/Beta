@@ -3,41 +3,37 @@ import React, { useState } from 'react'
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 
-const RegisterationForm = () => {
-  const router = useRouter();
-  const [isFocused, setIsFocused] = useState(false);
+const LoginForm = () => {
+    const router = useRouter();
+    const [isFocused, setIsFocused] = useState(false);
 
     return (
         <View style={styles.formWrapper}>
             <TextInput 
-              placeholder='Name' 
-              placeholderTextColor={Colors.secondaryColorLightGrey} 
-              style={[styles.inputField, isFocused && styles.inputFieldFocused]}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
+                placeholder='Email' 
+                placeholderTextColor={Colors.secondaryColorLightGrey} 
+                style={[styles.inputField, isFocused && styles.inputFieldFocused]}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
             />
             <TextInput 
-              placeholder='Email' 
-              placeholderTextColor={Colors.secondaryColorLightGrey} 
-              style={[styles.inputField, isFocused && styles.inputFieldFocused]}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
+                placeholder='Password' 
+                placeholderTextColor={Colors.secondaryColorLightGrey} 
+                style={[styles.inputField, isFocused && styles.inputFieldFocused]}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
             />
-            <TextInput 
-              placeholder='Password' 
-              placeholderTextColor={Colors.secondaryColorLightGrey} 
-              style={[styles.inputField, isFocused && styles.inputFieldFocused]}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-            />
-            <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={styles.registerBtn}>
-              <Text style={styles.registerBtnTxt}>Join :)</Text>
+            <View style={styles.formTextWrapper}>
+                <Text style={styles.formText}>Forgot password?</Text>
+            </View>
+            <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={styles.loginBtn}>
+              <Text style={styles.loginBtnTxt}>Enter :)</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default RegisterationForm
+export default LoginForm
 
 const styles = StyleSheet.create({
     formWrapper: {
@@ -60,7 +56,15 @@ const styles = StyleSheet.create({
       borderColor: Colors.primaryColorBlack,  // iOS blue color or your app's primary color
       borderWidth: 2,
     },
-    registerBtn: {
+    formTextWrapper: {
+        justifyContent: 'flex-end',
+        marginTop: 10
+    },
+    formText: {
+        alignSelf: 'flex-end', 
+        fontWeight: '800'
+    },
+    loginBtn: {
       backgroundColor: Colors.primaryColorBlack,
       paddingVertical: 12,
       paddingHorizontal: 18,
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
       marginVertical: 20,
       height:48
     },
-    registerBtnTxt: {
+    loginBtnTxt: {
       fontSize: 16,
       fontWeight: 'bold',
       color: 'white',
