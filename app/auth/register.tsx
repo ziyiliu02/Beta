@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Stack, useRouter } from 'expo-router';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { useHeaderHeight } from '@react-navigation/elements';
 import RegisterationForm from '@/components/auth/RegisterationForm';
@@ -22,6 +22,13 @@ const register = () => {
             <FontAwesome name='angle-left' size={30} color={Colors.primaryColorBlack}/>
           </View>
         </TouchableOpacity>
+      ),
+      headerRight: () => (
+        <TouchableOpacity onPress={() => router.push("/")}>
+          <View>
+            <Entypo name='cross' size={30} color={Colors.primaryColorBlack}/>
+          </View>
+        </TouchableOpacity>
       )
     }}/>
     <View style={[styles.container, { paddingTop: headerHeight }]}>
@@ -39,7 +46,7 @@ const register = () => {
 
       <Text style={styles.loginTextWrapper}>
         Already have an account?
-        <TouchableOpacity onPress={() => router.replace("/(tabs)")} style={{ marginTop: -2}}> 
+        <TouchableOpacity onPress={() => router.push("/auth/login")} style={{ marginTop: -2}}> 
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
       </Text>
