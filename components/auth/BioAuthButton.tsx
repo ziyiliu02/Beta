@@ -6,16 +6,16 @@ import { Ionicons, FontAwesome6 } from '@expo/vector-icons';
 const BioAuthButton = () => {
   return (
     <View>
-        <View style={styles.buttonWrapper}>
-            <TouchableOpacity style={styles.button}>
-                <View style={styles.buttonContent}>
-                    <Text style={styles.buttonTxt}>Touch ID</Text>
+        <View style={styles.btnWrapper}>
+            <TouchableOpacity style={styles.btn}>
+                <View style={styles.btnContent}>
+                    <Text style={styles.btnTxt}>Touch ID</Text>
                     <Ionicons name='finger-print' size={20} color={'white'}/>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-                <View style={styles.buttonContent}>
-                    <Text style={styles.buttonTxt}>Face Recognition</Text>
+            <TouchableOpacity style={styles.btn}>
+                <View style={styles.btnContent}>
+                    <Text style={styles.btnTxt}>Face Recognition</Text>
                     <FontAwesome6 name='smile' size={20} color={'white'}/>
                 </View>
             </TouchableOpacity>
@@ -27,10 +27,10 @@ const BioAuthButton = () => {
 export default BioAuthButton
 
 const styles = StyleSheet.create({
-    buttonWrapper: {
+    btnWrapper: {
         marginTop: 10
     },
-    button: {
+    btn: {
         backgroundColor: Colors.primaryColorBlack,
         paddingVertical: 12,
         paddingHorizontal: 18,
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         height:50
     },
-    buttonContent: {
+    btnContent: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 16,
     },
-    buttonTxt: {
+    btnTxt: {
         fontSize: 16,
         fontWeight: 'bold',
         color: 'white',

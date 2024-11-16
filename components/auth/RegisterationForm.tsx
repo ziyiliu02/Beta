@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
       alignSelf: 'stretch',
       borderRadius: 8,
       marginVertical: 20,
-      height:48
+      height:50
     },
     registerBtnTxt: {
       fontSize: 16,

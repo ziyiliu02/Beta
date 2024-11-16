@@ -21,7 +21,7 @@ const Page = () => {
       <StatusBar style="light"/>
       <View style={styles.logoWrapper}>
         <Image source={require('@/assets/images/logo.png')} style={styles.logoImage}/>
-        <Text style={styles.logoText}>Cherrypick</Text>
+        <Text style={styles.logoTxt}>Cherrypick</Text>
       </View>
       <View style={styles.authWrapper}>
         <TouchableOpacity onPress={() => router.push("/auth/register")} style={styles.registerBtn}>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150
   },
-  logoText: {
+  logoTxt: {
     fontFamily: 'PermanentMarker',
     fontSize: 32,
     color: 'white'
