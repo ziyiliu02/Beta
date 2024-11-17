@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Stack, useRouter } from 'expo-router';
-import { FontAwesome, Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { useHeaderHeight } from '@react-navigation/elements';
 

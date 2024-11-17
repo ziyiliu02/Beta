@@ -13,6 +13,9 @@ const Page = (props: Props) => {
       <TouchableOpacity onPress={() => router.push("/theatre/notification")}>
           <Text>Notifications</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push("/theatre/channelEpisodes")}>
+          <Text>Channel</Text>
+      </TouchableOpacity>
     </View>
   )
 }
