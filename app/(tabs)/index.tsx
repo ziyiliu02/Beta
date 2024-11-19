@@ -2,17 +2,24 @@ import { StyleSheet, Text, View, TouchableOpacity, Button, Modal } from "react-n
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react'
 import SourcesModal from '@/components/theatre/SourcesModal';
+import AskModal from "@/components/theatre/AskModal";
 
 type Props = {}
 
 const Page = (props: Props) => {
   const router = useRouter();
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isSourcesModalVisible, setIsSourcesModalVisible] = useState(false);
+  const [isAskModalVisible, setIsAskModalVisible] = useState(false);
 
   const sources = [
     { id: 1, title: 'Title', timestamp: 'Timestamp' },
     { id: 2, title: 'Title', timestamp: 'Timestamp' },
   ];
+
+  const questions = [
+    { id: 1, title: 'Question' },
+    { id: 2, title: 'Question' },
+  ]
 
   return (
     <View style={styles.container}>
@@ -24,11 +31,19 @@ const Page = (props: Props) => {
           <Text>Channel</Text>
       </TouchableOpacity>
       <View>
-        <Button title="Sources" onPress={() => setIsModalVisible(true)} />
+        <Button title="Sources" onPress={() => setIsSourcesModalVisible(true)} />
         <SourcesModal
-          visible={isModalVisible}
-          onClose={() => setIsModalVisible(false)}
+          visible={isSourcesModalVisible}
+          onClose={() => setIsSourcesModalVisible(false)}
           sources={sources}
+        />
+      </View>
+      <View>
+        <Button title="Ask" onPress={() => setIsAskModalVisible(true)} />
+        <AskModal
+          visible={isAskModalVisible}
+          onClose={() => setIsAskModalVisible(false)}
+          questions={questions}
         />
       </View>
     </View>
