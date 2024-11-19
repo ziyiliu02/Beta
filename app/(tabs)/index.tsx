@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react'
 import SourcesModal from '@/components/theatre/SourcesModal';
 import AskModal from "@/components/theatre/AskModal";
+import RewriteModal from "@/components/theatre/RewriteModal";
 
 type Props = {}
 
@@ -10,6 +11,7 @@ const Page = (props: Props) => {
   const router = useRouter();
   const [isSourcesModalVisible, setIsSourcesModalVisible] = useState(false);
   const [isAskModalVisible, setIsAskModalVisible] = useState(false);
+  const [isRewriteModalVisible, setIsRewriteModalVisible] = useState(false);
 
   const sources = [
     { id: 1, title: 'Title', timestamp: 'Timestamp' },
@@ -21,6 +23,11 @@ const Page = (props: Props) => {
     { id: 2, title: 'Question' },
   ]
 
+  const models = [
+    { id: 1, model: 'Claude 3.5 Sonnet', description: 'Latest fast model by Anthropic' },
+    { id: 2, model: 'Claude 3 Opus', description: 'Latest advanced model by Anthropic' },
+  ]
+
   return (
     <View style={styles.container}>
       <Text>Theatre</Text>
@@ -30,6 +37,8 @@ const Page = (props: Props) => {
       <TouchableOpacity onPress={() => router.push("/theatre/channelEpisodes")}>
           <Text>Channel</Text>
       </TouchableOpacity>
+
+      {/* Sources */}
       <View>
         <Button title="Sources" onPress={() => setIsSourcesModalVisible(true)} />
         <SourcesModal
@@ -38,12 +47,24 @@ const Page = (props: Props) => {
           sources={sources}
         />
       </View>
+
+      {/* Ask */}
       <View>
         <Button title="Ask" onPress={() => setIsAskModalVisible(true)} />
         <AskModal
           visible={isAskModalVisible}
           onClose={() => setIsAskModalVisible(false)}
           questions={questions}
+        />
+      </View>
+
+      {/* Rewrite */}
+      <View>
+        <Button title="Rewrite" onPress={() => setIsRewriteModalVisible(true)} />
+        <RewriteModal
+          visible={isRewriteModalVisible}
+          onClose={() => setIsRewriteModalVisible(false)}
+          models={models}
         />
       </View>
     </View>

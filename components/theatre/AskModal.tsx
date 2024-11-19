@@ -6,15 +6,15 @@ import { Entypo, Feather, FontAwesome5 } from '@expo/vector-icons';
 const { width } = Dimensions.get('window');
 
 interface Question {
-    id: number;
-    question: string;
-  }
+  id: number;
+  question: string;
+}
   
-  interface AskModalProps {
-    visible: boolean;
-    onClose: () => void;
-    questions: Question[];
-  }
+interface AskModalProps {
+  visible: boolean;
+  onClose: () => void;
+  questions: Question[];
+}
 
 const AskModal = ({ visible, onClose, questions}: AskModalProps) => {
   return (
