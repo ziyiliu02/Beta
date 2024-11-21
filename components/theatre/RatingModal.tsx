@@ -8,7 +8,7 @@ interface RatingModalProps {
     onClose: () => void;
 }
 
-const RatingModal = ({ visible, onClose }:  RatingModalProps) => {
+const RatingModal = ({ visible, onClose }: RatingModalProps) => {
     const [rating, setRating] = useState(0);
 
     return (

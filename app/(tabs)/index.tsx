@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, Button, Modal } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react'
 import SourcesModal from '@/components/theatre/SourcesModal';
 import AskModal from "@/components/theatre/AskModal";
 import RewriteModal from "@/components/theatre/RewriteModal";
 import RatingModal from "@/components/theatre/RatingModal";
+import JoinModal from "@/components/theatre/JoinModal";
 
 type Props = {}
 
@@ -14,6 +15,7 @@ const Page = (props: Props) => {
   const [isAskModalVisible, setIsAskModalVisible] = useState(false);
   const [isRewriteModalVisible, setIsRewriteModalVisible] = useState(false);
   const [isRatingModalVisible, setIsRatingModalVisible] = useState(false);
+  const [isJoinModalVisible, setIsJoinModalVisible] = useState(false);
 
   const sources = [
     { id: 1, title: 'Title', timestamp: 'Timestamp' },
@@ -76,6 +78,15 @@ const Page = (props: Props) => {
         <RatingModal
           visible={isRatingModalVisible}
           onClose={() => setIsRatingModalVisible(false)}
+        />
+      </View>
+
+      {/* Join */}
+      <View>
+        <Button title="Join" onPress={() => setIsJoinModalVisible(true)} />
+        <JoinModal
+          visible={isJoinModalVisible}
+          onClose={() => setIsJoinModalVisible(false)}
         />
       </View>
     </View>
