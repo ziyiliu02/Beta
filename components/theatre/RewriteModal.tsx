@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Modal, Dimensions, TouchableOpacity, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Colors from '@/constants/Colors';
 import { Entypo, FontAwesome } from '@expo/vector-icons';

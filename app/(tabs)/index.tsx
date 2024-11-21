@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import SourcesModal from '@/components/theatre/SourcesModal';
 import AskModal from "@/components/theatre/AskModal";
 import RewriteModal from "@/components/theatre/RewriteModal";
+import RatingModal from "@/components/theatre/RatingModal";
 
 type Props = {}
 
@@ -12,6 +13,7 @@ const Page = (props: Props) => {
   const [isSourcesModalVisible, setIsSourcesModalVisible] = useState(false);
   const [isAskModalVisible, setIsAskModalVisible] = useState(false);
   const [isRewriteModalVisible, setIsRewriteModalVisible] = useState(false);
+  const [isRatingModalVisible, setIsRatingModalVisible] = useState(false);
 
   const sources = [
     { id: 1, title: 'Title', timestamp: 'Timestamp' },
@@ -65,6 +67,15 @@ const Page = (props: Props) => {
           visible={isRewriteModalVisible}
           onClose={() => setIsRewriteModalVisible(false)}
           models={models}
+        />
+      </View>
+
+      {/* Rate */}
+      <View>
+        <Button title="Rate" onPress={() => setIsRatingModalVisible(true)} />
+        <RatingModal
+          visible={isRatingModalVisible}
+          onClose={() => setIsRatingModalVisible(false)}
         />
       </View>
     </View>
