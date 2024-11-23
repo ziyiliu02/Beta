@@ -6,6 +6,7 @@ import Colors from '@/constants/Colors';
 import { useHeaderHeight } from '@react-navigation/elements';
 import ChannelEpisodesTabNavigation from '@/components/theatre/ChannelEpisodesTabNavigation'; 
 import ChannelEpisodesList from '@/components/theatre/ChannelEpisodesList';
+import ChannelActivities from '@/components/theatre/ChannelActivities';
 
 const channelEpisodes = () => {
     const router = useRouter();
@@ -25,6 +26,7 @@ const channelEpisodes = () => {
             ),
         }}/>
         <View style={[styles.container, { paddingTop: headerHeight }]}>
+            <ChannelActivities/>
             <View style={styles.navigation}>
                 <ChannelEpisodesTabNavigation/>
             </View>
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: 'white',
       paddingHorizontal: 30,
-      padding: 20
+      padding: 20,
     },
     navigation: {
         flex: 1
