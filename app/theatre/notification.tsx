@@ -4,6 +4,8 @@ import { Stack, useRouter } from 'expo-router';
 import { FontAwesome, Feather } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { useHeaderHeight } from '@react-navigation/elements';
+import NotificationActivities from '@/components/theatre/NotificationActivities';
+import NotificationActivitiesOld from '@/components/theatre/NotificationActivitiesOld';
 
 const notification = () => {
     const router = useRouter();
@@ -30,6 +32,8 @@ const notification = () => {
             )
         }}/>
         <View style={[styles.container, { paddingTop: headerHeight }]}>
+            <NotificationActivities/>
+
             <Text style={styles.headingTxt}>New</Text>
             <View style={styles.line}/>
             <Text style={styles.dateTxt}>15 Nov 2024</Text>
@@ -37,6 +41,7 @@ const notification = () => {
             <Text style={styles.headingTxt}>Old</Text>
             <View style={styles.line}/>
             <Text style={styles.dateTxt}>15 Nov 2024</Text>
+            <NotificationActivitiesOld/>
         </View>
         </>
     )
