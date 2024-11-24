@@ -27,6 +27,7 @@ const SourcesModal = ({ visible, onClose, sources}: SourcesModalProps) => {
     >
       <View style={styles.modalOverlay}>
         <View style={styles.modalContent}>
+          
           {/* Header Section */}
           <View style={styles.header}>
             <View style={styles.headerBorderContainer}>
@@ -61,6 +62,7 @@ const SourcesModal = ({ visible, onClose, sources}: SourcesModalProps) => {
             </View>
           ))}
           </View>
+
         </View>
       </View> 
     </Modal>
