@@ -3,6 +3,9 @@ import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react'
 import { StatusBar } from "expo-status-bar";
 import Colors from '@/constants/Colors';
+import SourcesModal from '@/components/theatre/SourcesModal';
+import AskModal from "@/components/theatre/AskModal";
+import RewriteModal from "@/components/theatre/RewriteModal";
 import RatingModal from "@/components/theatre/RatingModal";
 import JoinModal from "@/components/theatre/JoinModal";
 import BookmarkModal from "@/components/theatre/BookmarkModal";
@@ -49,23 +52,76 @@ const Page = (props: Props) => {
           <Text style={styles.notification}>4</Text>
         </TouchableOpacity>
       )
-    }}/>
-      <View>
+    }}>
+      <View style={styles.container}>
         <StatusBar style="light"/>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Episode
-            isSourcesModalVisible={isSourcesModalVisible}
-            setIsSourcesModalVisible={setIsSourcesModalVisible}
-            sources={sources}
-            isAskModalVisible={isAskModalVisible}
-            setIsAskModalVisible={setIsAskModalVisible}
-            questions={questions}
-            isRewriteModalVisible={isRewriteModalVisible}
-            setIsRewriteModalVisible={setIsRewriteModalVisible}
-            models={models}
-          />
+          <Episode/>
+
+          <TouchableOpacity onPress={() => router.push("/theatre/channelEpisodes")}>
+              <Text>Channel</Text>
+          </TouchableOpacity>
+
+          {/* Sources */}
+          <View>
+            <Button title="Sources" onPress={() => setIsSourcesModalVisible(true)} />
+            <SourcesModal
+              visible={isSourcesModalVisible}
+              onClose={() => setIsSourcesModalVisible(false)}
+              sources={sources}
+            />
+          </View>
+
+          {/* Ask */}
+          <View>
+            <Button title="Ask" onPress={() => setIsAskModalVisible(true)} />
+            <AskModal
+              visible={isAskModalVisible}
+              onClose={() => setIsAskModalVisible(false)}
+              questions={questions}
+            />
+          </View>
+
+          {/* Rewrite */}
+          <View>
+            <Button title="Rewrite" onPress={() => setIsRewriteModalVisible(true)} />
+            <RewriteModal
+              visible={isRewriteModalVisible}
+              onClose={() => setIsRewriteModalVisible(false)}
+              models={models}
+            />
+          </View>
+
+          {/* Rate */}
+          <View>
+            <Button title="Rate" onPress={() => setIsRatingModalVisible(true)} />
+            <RatingModal
+              visible={isRatingModalVisible}
+              onClose={() => setIsRatingModalVisible(false)}
+            />
+          </View>
+
+          {/* Join */}
+          <View>
+            <Button title="Join" onPress={() => setIsJoinModalVisible(true)} />
+            <JoinModal
+              visible={isJoinModalVisible}
+              onClose={() => setIsJoinModalVisible(false)}
+            />
+          </View>
+
+          {/* Bookmark */}
+          <View>
+            <Button title="Bookmark" onPress={() => setIsBookmarkModalVisible(true)} />
+            <BookmarkModal
+              visible={isBookmarkModalVisible}
+              onClose={() => setIsBookmarkModalVisible(false)}
+              categories={categories}
+            />
+          </View>
         </ScrollView>
       </View>
+    </Stack.Screen>
     </>
   )
 }
@@ -73,6 +129,9 @@ const Page = (props: Props) => {
 export default Page
 
 const styles = StyleSheet.create({
+  container: {
+
+  },
   notificationWrapper: {
     backgroundColor: Colors.primaryColorRed,
     width: 30,
