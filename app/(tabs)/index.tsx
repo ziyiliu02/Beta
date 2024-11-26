@@ -3,11 +3,9 @@ import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react'
 import { StatusBar } from "expo-status-bar";
 import Colors from '@/constants/Colors';
-import RatingModal from "@/components/theatre/RatingModal";
-import JoinModal from "@/components/theatre/JoinModal";
-import BookmarkModal from "@/components/theatre/BookmarkModal";
 import Episode from "@/components/theatre/Episode";
 import Pagination from "@/components/theatre/Pagination";
+import Icons from "@/components/theatre/Icons";
 
 type Props = {}
 
@@ -66,6 +64,15 @@ const Page = (props: Props) => {
             models={models}
           />
           <Pagination/>
+          <Icons
+            isRatingModalVisible={isRatingModalVisible}
+            setIsRatingModalVisible={setIsRatingModalVisible}
+            isJoinModalVisible={isJoinModalVisible}
+            setIsJoinModalVisible={setIsJoinModalVisible}
+            isBookmarkModalVisible={isBookmarkModalVisible}
+            setIsBookmarkModalVisible={setIsBookmarkModalVisible}
+            categories={categories}
+          />
         </ScrollView>
       </View>
     </>
