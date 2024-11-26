@@ -7,6 +7,7 @@ import RatingModal from "@/components/theatre/RatingModal";
 import JoinModal from "@/components/theatre/JoinModal";
 import BookmarkModal from "@/components/theatre/BookmarkModal";
 import Episode from "@/components/theatre/Episode";
+import Pagination from "@/components/theatre/Pagination";
 
 type Props = {}
 
@@ -64,6 +65,7 @@ const Page = (props: Props) => {
             setIsRewriteModalVisible={setIsRewriteModalVisible}
             models={models}
           />
+          <Pagination/>
         </ScrollView>
       </View>
     </>
