@@ -6,6 +6,7 @@ import Colors from '@/constants/Colors';
 import Episode from "@/components/theatre/Episode";
 import Pagination from "@/components/theatre/Pagination";
 import Icons from "@/components/theatre/Icons";
+import Social from "@/components/theatre/Social";
 
 type Props = {}
 
@@ -73,6 +74,7 @@ const Page = (props: Props) => {
             setIsBookmarkModalVisible={setIsBookmarkModalVisible}
             categories={categories}
           />
+          <Social/>
         </ScrollView>
       </View>
     </>

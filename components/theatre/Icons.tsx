@@ -14,7 +14,7 @@ const Icons = ({ isRatingModalVisible, setIsRatingModalVisible, isJoinModalVisib
             <View style={styles.iconWrapper}>
                 <View style={styles.icon}>
                     <TouchableOpacity onPress={() => setIsRatingModalVisible(true)} style={styles.icon}>
-                        <MaterialCommunityIcons name='popcorn' size={20} color={Colors.primaryColorBlack}/>
+                        <MaterialCommunityIcons name='popcorn' size={18} color={Colors.primaryColorBlack}/>
                         <Text style={styles.iconTxt}>Rating</Text>
                     </TouchableOpacity>
                     <RatingModal
@@ -24,7 +24,7 @@ const Icons = ({ isRatingModalVisible, setIsRatingModalVisible, isJoinModalVisib
                 </View>
                 <View style={styles.icon}>
                     <TouchableOpacity onPress={() => setIsJoinModalVisible(true)} style={styles.icon}>
-                        <FontAwesome5 name='wine-glass-alt' size={20} color={Colors.primaryColorBlack}/>
+                        <FontAwesome5 name='wine-glass-alt' size={18} color={Colors.primaryColorBlack}/>
                         <Text style={styles.iconTxt}>Join</Text>
                     </TouchableOpacity>
                     <JoinModal
@@ -38,7 +38,7 @@ const Icons = ({ isRatingModalVisible, setIsRatingModalVisible, isJoinModalVisib
             <View style={styles.iconWrapper}>
                 <View style={styles.icon}>
                     <TouchableOpacity onPress={() => setIsBookmarkModalVisible(true)} style={styles.icon}>
-                        <Feather name='bookmark' size={20} color={Colors.primaryColorBlack}/>
+                        <Feather name='bookmark' size={18} color={Colors.primaryColorBlack}/>
                         <Text style={styles.iconTxt}>Bookmark</Text>
                     </TouchableOpacity>
                     <BookmarkModal
@@ -48,7 +48,7 @@ const Icons = ({ isRatingModalVisible, setIsRatingModalVisible, isJoinModalVisib
                     />
                 </View>
                 <View style={styles.icon}>
-                    <Octicons name='megaphone' size={20} color={Colors.primaryColorBlack}/>
+                    <Octicons name='megaphone' size={18} color={Colors.primaryColorBlack}/>
                     <Text style={styles.iconTxt}>Share</Text>
                 </View>
             </View>
